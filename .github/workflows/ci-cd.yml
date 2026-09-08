@@ -48,7 +48,7 @@ jobs:
       - name: Criar imagem Docker
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./backend
           file: ./backend/Dockerfile
           push: true
           tags: yuritwardowski/stockflow:latest
