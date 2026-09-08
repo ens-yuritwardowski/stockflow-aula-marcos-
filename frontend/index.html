@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StockFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <span>📦</span>
+            <div>
+                <h1>StockFlow</h1>
+                <p>Controle inteligente de estoque</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="dashboard">
+
+            <div class="card">
+                <span class="card-icon">📦</span>
+                <div>
+                    <p>Total de produtos</p>
+                    <h2 id="totalProdutos">0</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">⚠️</span>
+                <div>
+                    <p>Estoque baixo</p>
+                    <h2 id="estoqueBaixo">0</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">💰</span>
+                <div>
+                    <p>Valor em estoque</p>
+                    <h2 id="valorEstoque">R$ 0,00</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="produtos">
+
+            <div class="section-header">
+                <div>
+                    <h2>Produtos</h2>
+                    <p>Gerencie os produtos cadastrados no estoque.</p>
+                </div>
+
+                <button id="btnNovoProduto">
+                    + Novo produto
+                </button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                            <th>Estoque mínimo</th>
+                            <th>Preço</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelaProdutos">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Novo produto</h2>
+
+                <button id="fecharModal">
+                    ×
+                </button>
+            </div>
+
+            <form id="formProduto">
+
+                <label>
+                    Nome do produto
+
+                    <input
+                        type="text"
+                        id="nome"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Descrição
+
+                    <input
+                        type="text"
+                        id="descricao"
+                    >
+                </label>
+
+                <label>
+                    Quantidade
+
+                    <input
+                        type="number"
+                        id="quantidade"
+                        min="0"
+                        value="0"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Estoque mínimo
+
+                    <input
+                        type="number"
+                        id="estoqueMinimo"
+                        min="0"
+                        value="5"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Preço
+
+                    <input
+                        type="number"
+                        id="preco"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                        required
+                    >
+                </label>
+
+                <button type="submit">
+                    Cadastrar produto
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
